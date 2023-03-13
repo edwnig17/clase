@@ -1159,195 +1159,205 @@ sumar2(3,4)
   // parametros en arrow functions
 
   //-----Ejercico final de taller de JavaScript ------//
-
-  function mostrarMenu() {
-    let opcion = -1;
-    do {
-      opcion = parseInt(prompt(`—————— Menu Edwing el mejor ——————
-      1. Lectura de datos
-      2. Crear objeto 
-      3. Mostrar objeto
-      4. Crear Array
-      5. Mostrar Array
-      6. Eliminar primer elemento del Array
-      7. Eliminar el último elemento de Array 
-      8. Eliminar cualquier elemento del Array
-      9. Agregar elemento al comienzo del Array
-      10. Agregar elemento al final del Array 
-      11. Crear array con objetos 
-      12. Iterar array con objetos con for
-      13. Iterar array con objeto con ForEach
-      14. Iterar array con objetos con Map y crear copia
-      15. Proceso personal
-      0. Salir`));
-
-      switch(opcion) {
-         case 1:
-          function leerDatos() {
-            let nombre = prompt("Ingrese su nombre");
-            let edad = parseInt(prompt("Ingrese su edad"));
-            console.log(`Su nombre es ${nombre} y su edad es ${edad}`);
-          }
-          
-          break;
-         case 2:
-          function crearObjeto() {
-            let persona = {
-              nombre: "Edwing",
-              edad: 19,
-              correo: "edwingstiven2023@gmail.com"
-            };
-            console.log(persona);
-          }
-          
-          break;
-         case 3:
-          function mostrarObjeto() {
-            let persona = {
-              nombre: "Edwing",
-              edad: 19,
-              correo: "edwingstiven2023@gmail.com"
-            };
-            for (let propiedad in persona) {
-              console.log(`${propiedad}: ${persona[propiedad]}`);
-            }
-          }
-          
-          break;
-         case 4:
-          function crearArray() {
-            let numeros = [1, 2, 3, 4, 5];
-            console.log(numeros);
-          }
-          
-          break;
-         case 5:
-          function mostrarArray() {
-            let numeros = [1, 2, 3, 4, 5];
-            for (let i = 0; i < numeros.length; i++) {
-              console.log(numeros[i]);
-            }
-          }
-          
-          break;
-         case 6:
-          function eliminarPrimerElemento() {
-            let numeros = [1, 2, 3, 4, 5];
-            numeros.shift();
-            console.log(numeros);
-          }
-          
-          break;
-         case 7:
-          function eliminarUltimoElemento() {
-            let numeros = [1, 2, 3, 4, 5];
-            numeros.pop();
-            console.log(numeros);
-          }
-          
-          break;
-         case 8:
-          function eliminarElemento() {
-            let numeros = [1, 2, 3, 4, 5];
-            let indice = parseInt(prompt("Ingrese el índice del elemento a eliminar"));
-            numeros.splice(indice, 1);
-            console.log(numeros);
-          }
-          
-          break;
-         case 9:
-          function agregarAlComienzo() {
-            let numeros = [1, 2, 3, 4, 5];
-            let elemento = parseInt(prompt("Ingrese el elemento a agregar al comienzo del array"));
-            numeros.unshift(elemento);
-            console.log(numeros);
-          }
-          
-          break;
-         case 10:
-          function agregarAlFinal() {
-            let numeros = [1, 2, 3, 4, 5];
-            let elemento = parseInt(prompt("Ingrese el elemento a agregar al final del array"));
-            numeros.push(elemento);
-            console.log(numeros);
-          }
-          
-          break;
-         case 11:
-          function crearArrayObjetos() {
-            let personas = [
-              { nombre: "Stiven", edad: 19, correo: "edwingstiven20@gmail.com" },
-              { nombre: "Andres", edad: 18, correo: "andresraul@gmail.com" },
-              { nombre: "Jairo", edad: 17, correo: "jairo@gmail.com" }
-            ];
-            console.log(personas);
-          }
-
-          break;
-         case 12:
-        function iterarArrayFor() {
-          let personas = [
-            { nombre: "Stiven", edad: 19, correo: "edwingstiven20@gmail.com" },
-            { nombre: "Andres", edad: 18, correo: "andresraul@gmail.com" },
-            { nombre: "Jairo", edad: 17, correo: "jairo@gmail.com" }
-          ];
-          for (let i = 0; i < personas.length; i++) {
-            console.log(`${personas[i].nombre} - ${personas[i].edad} años - ${personas[i].correo}`);
-          }
-        }
-
-          break;
-         case 13:
-          function iterarArrayForEach() {
-            let personas = [
-              { nombre: "Stiven", edad: 19, correo: "edwingstiven20@gmail.com" },
-              { nombre: "Andres", edad: 18, correo: "andresraul@gmail.com" },
-              { nombre: "Jairo", edad: 17, correo: "jairo@gmail.com" }
-            ];
-            personas.forEach(function(persona) {
-              console.log(`${persona.nombre} - ${persona.edad} años - ${persona.correo}`);
-            });
-          }
-          
-          break;
-         case 14:
-          function iterarArrayMap() {
-            let personas = [
-              { nombre: "Stiven", edad: 19, correo: "edwingstiven20@gmail.com" },
-              { nombre: "Andres", edad: 18, correo: "andresraul@gmail.com" },
-              { nombre: "Jairo", edad: 17, correo: "jairo@gmail.com" }
-            ];
-            let personasCopia = personas.map(function(persona) {
-              return { ...persona };
-            });
-            console.log(personasCopia);
-          }
-          
-          break;
-         case 15:
-          function procesoPersonal() {
-            let numeros = [5, 7, 3, 1, 9];
-            let suma = 0;
-            for (let i = 0; i < numeros.length; i++) {
-              suma += numeros[i];
-            }
-            let promedio = suma / numeros.length;
-            console.log(`El promedio de los números es ${promedio}`);
-          }
-          
-          break;
-         case 0:
-          alert("Saliendo del menu");
-          break;
-        default:
-          alert("No es correcto tu elección");
-          break;
+  let fin = true;
+  let opcion;
+  
+  
+  
+  
+  //------------------------------------------------------------------------------------------
+  //FUNCIONES
+  let objetoFuncion;
+  let objetoRetornar;
+  
+  function leerDatos() {
+      let nombre = prompt(`Ingrese el nombre : `);
+      let altura = parseFloat(prompt(`Ingrese su altura: `));
+      const leerDatos = {
+          nombre: nombre,
+          altura: altura,
+          ancho: altura,
       }
-    } while (opcion != 0);
+      console.log(leerDatos);
+      objetoFuncion = leerDatos;
+      return leerDatos;
   }
   
-  mostrarMenu();
+  function crearObjeto(leerDatos) {
+      const leer = {
+  
+      }
+      leer.tipoDePersona = leerDatos
+      console.log(leer);
+      return leer;
+  }
+  
+  function mostrarObjeto(cubo) {
+      console.log(cubo);
+  }
+  
+  let arreglo;
+  
+  function crearArray() {
+      let arregloFunction = [];
+      let n = parseInt(prompt(`Ingrese la cantidad de iteraciones a ingresar: `));
+  
+      let nombre;
+      for (let i = 0; i < n; i++) {
+          nombre = prompt(`Ingrese el nombre: `);
+          arregloFunction.push(nombre);
+      }
+      arreglo = arregloFunction;
+      return arregloFunction;
+  }
+  
+  function mostrarArray(arregloFunction) {
+      arregloFunction.forEach(nombres => {
+          console.log(`los nombres son:  ${nombres}`);
+      });
+  }
+  
+  function eliminarPrimerElementoArray(arregloFunction) {
+      arregloFunction.shift();
+  }
+  
+  function eliminarUltimoElementoArray(arregloFunction) {
+      arregloFunction.pop();
+  }
+  
+  function eliminarCualquierElementoArray(arregloFunction) {
+      let posicion = parseInt(prompt(`Ingrese La posicion a eliminar: `));
+  
+      arregloFunction.splice(posicion, 1);
+  }
+  
+  function agregarElementoComienzoArray(arregloFunction) {
+      let nombre = prompt(`Ingrese el nombre a agregar en la primera posicion: `);
+      arregloFunction.unshift(nombre);
+  }
+  
+  function agregarElementoFinalArray(arregloFunction) {
+      let nombre = prompt(`Ingrese el nombre a agregar en la primera posicion: `);
+      arregloFunction.push(nombre);
+  }
+  
+  let arregloObjeto;
+  
+  function crearArrayObjetos() {
+      const arregloObjetoFuncion = [{
+              nombre: ' Edwing'
+          },
+          {
+              nombre: 'Andres'
+          },
+      ];
+      arregloObjeto = arregloObjetoFuncion;
+      return arregloObjetoFuncion;
+  }
+  
+  function iterarFor(arregloFunction) {
+      for (let i = 0; i < arregloFunction.length; i++) {
+          console.log(`El objeto es ${arregloFunction[i].nombre}`);
+      }
+  }
+  
+  function iterarForEach(arregloFunction) {
+      arregloFunction.forEach(nombres => {
+          console.log(`El nombre es ${nombres.nombre}`);
+      });
+  }
+  
+  function iterarMap(arregloFunction) {
+      const objetoCopiado = arregloFunction.map(objetos => ({...objetos}));
+      console.log(objetoCopiado);
+  }
+  
+  function procesoPersonal() {
+      //Cree un array de objetos e itere cada uno mostrando nombres , edad y tipo de sangre
+      //Agregue un tercer objeto con datos personalizados
+      const personas = [
+          {
+              nombre: 'Edwing',
+              edad: 19,
+              tipoSangre: 'O+'
+          },
+          {
+              nombre: 'Isaias',
+              edad:17,
+              tipoSangre: 'O-'
+          }
+      ];
+      let nombre = prompt(`Ingrese el nombre: `);
+      let edad = parseInt(prompt(`Ingrese la edad: `));
+      let tipoSangre = prompt(`Ingrese el tipo de sangre: `);
+      personas.push({nombre, edad, tipoSangre});
+      console.log(personas);
+  
+      //Ahora evalue si la edad del ultimo objeto es mayor a la de Edwing y mostrarlo en consola
+      for (let i = 0; i < personas.length; i++) {
+          if (personas[0].edad > personas[2].edad) {
+              console.log(`El ${personas[0].nombre} es mayor que ${personas[2].nombre}`);
+          }
+          else{
+              console.log(`El ${personas[2].nombre} es mayor que ${personas[0].nombre}`);
+          }
+      }
+  }
+  
+  while (fin === true) {
+    opcion = parseInt(prompt(`-------MENU DE EDWING EL CRACK -------  
+    1. LECTURA DE DATOS   
+    2. CREAR OBJETO   
+    3. MOSTRAR OBJETO   
+    4. CERAR ARRAY  
+    5. MOSTRAR ARRAY  
+    6. ELIMINE EL PRIMER ELEMENTO DEL ARRAY   
+    7. ELIMINE EL ULTIMO ELEMENTO DEL ARRAY   
+    8. ELIMINAR CUALQUIER ELEMENTO DEL ARRAY  
+    9. AGREGAR ELEMENTO AL COMIENZO DEL ARRAY   
+    10. AGREGAR ELEMENTO AL FINAL DEL ARRAY   
+    11. CREAR ARRAY CON OBJETOS     
+    12. ITERAR ARRAY CON OBJETOS CON FOR 
+    13. ITERAR ARRAY CON OBJETOS CON FOREACH 
+    14. ITERAR ARRAY CON OBJETOS CON MAP Y CREAR COPIA 
+    15. PROCESO PERSONAL 
+    0. SALIR 
+    `));
 
+    //CONDICIONES
+
+    if (opcion === 0) {
+        fin = false;
+    } else if (opcion === 1) {
+        leerDatos();
+    } else if (opcion === 2) {
+        objetoRetornar = crearObjeto(objetoFuncion);
+    } else if (opcion === 3) {
+        mostrarObjeto(objetoRetornar);
+    } else if (opcion === 4) {
+        arreglo = crearArray();
+    } else if (opcion === 5) {
+        mostrarArray(arreglo);
+    } else if (opcion === 6) {
+        eliminarPrimerElementoArray(arreglo);
+    } else if (opcion === 7) {
+        eliminarUltimoElementoArray(arreglo);
+    } else if (opcion === 8) {
+        eliminarCualquierElementoArray(arreglo);
+    } else if (opcion === 9) {
+        agregarElementoComienzoArray(arreglo);
+    } else if (opcion === 10) {
+        agregarElementoFinalArray(arreglo);
+    } else if (opcion === 11) {
+        arregloObjeto = crearArrayObjetos();
+    } else if (opcion === 12) {
+        iterarFor(arregloObjeto);
+    } else if(opcion === 13){
+        iterarForEach(arregloObjeto);
+    } else if(opcion === 14){
+        iterarMap(arregloObjeto);
+    } else if(opcion === 15){
+        procesoPersonal();
+    }
+  }
   //Edwing Stiven Mejia Saenz---Artemis B2-----//
-  
-  
